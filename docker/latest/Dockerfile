@@ -26,7 +26,8 @@ RUN apt-get update && \
 
 RUN pip3 --no-cache-dir install \
         git+https://github.com/waikato-datamining/audio-dataset-converter.git \
-        git+https://github.com/waikato-datamining/audio-dataset-converter-faster-whisper.git
+        git+https://github.com/waikato-datamining/audio-dataset-converter-faster-whisper.git \
+        git+https://github.com/waikato-datamining/audio-dataset-converter-visualization.git
 
 COPY bash.bashrc /etc/bash.bashrc
 
