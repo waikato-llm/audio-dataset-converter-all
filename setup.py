@@ -29,6 +29,7 @@ setup(
     install_requires=[
         "audio-dataset-converter>=0.0.1",
         "audio-dataset-converter-faster-whisper>=0.0.1",
+        "audio-dataset-converter-redis>=0.0.1",
         "audio-dataset-converter-visualization>=0.0.1",
     ],
     version="0.0.1",
