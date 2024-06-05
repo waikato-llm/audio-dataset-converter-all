@@ -1,5 +1,5 @@
 # audio-dataset-converter-all
-Meta-library that combines all [audio-dataset-converter](https://github.com/waikato-datamining/audio-dataset-converter) libraries.
+Meta-library that combines all [audio-dataset-converter](https://github.com/waikato-llm/audio-dataset-converter) libraries.
 
 
 ## Installation
@@ -13,7 +13,7 @@ pip install audio-dataset-converter-all
 The latest code straight from the repository:
 
 ```bash
-pip install git+https://github.com/waikato-datamining/audio-dataset-converter-all.git
+pip install git+https://github.com/waikato-llm/audio-dataset-converter-all.git
 ```
 
 
