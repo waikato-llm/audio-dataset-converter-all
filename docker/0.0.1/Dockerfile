@@ -25,7 +25,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip3 --no-cache-dir install \
-        audio-dataset-converter-all==0.0.1
+        audio_dataset_converter_all==0.0.1
 
 COPY bash.bashrc /etc/bash.bashrc
 

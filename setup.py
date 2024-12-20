@@ -13,7 +13,7 @@ def _read(f):
 
 
 setup(
-    name="audio-dataset-converter-all",
+    name="audio_dataset_converter_all",
     description="Meta-library that combines all audio-dataset-converter libraries.",
     long_description=(
             _read('DESCRIPTION.rst') + b'\n' +
@@ -27,10 +27,10 @@ setup(
     ],
     license='MIT License',
     install_requires=[
-        "audio-dataset-converter>=0.0.1",
-        "audio-dataset-converter-faster-whisper>=0.0.1",
-        "audio-dataset-converter-redis>=0.0.1",
-        "audio-dataset-converter-visualization>=0.0.1",
+        "audio_dataset_converter>=0.0.1",
+        "audio_dataset_converter_faster-whisper>=0.0.1",
+        "audio_dataset_converter_redis>=0.0.1",
+        "audio_dataset_converter_visualization>=0.0.1",
     ],
     version="0.0.1",
     author='Peter Reutemann',
