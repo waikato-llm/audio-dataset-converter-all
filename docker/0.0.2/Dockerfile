@@ -19,9 +19,9 @@ RUN apt-get update && \
        libsm6 \
        libxrender-dev \
        libxext6 \
+       libgl1 \
        libglx-mesa0 \
-       libpq-dev \
-       antiword && \
+       libpq-dev && \
     rm -rf /var/lib/apt/lists/*
 
 RUN python3 -m venv /opt/audio-dataset-converter && \
