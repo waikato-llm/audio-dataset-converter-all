@@ -26,7 +26,7 @@ Steps:
 
 * start new release (version: `vX.Y.Z`)
 * enter release notes, i.e., significant changes since last release
-* upload `audio-dataset-converter-all-X.Y.Z.tar.gz` previously generated with `setup.py`
+* upload `audio_dataset_converter_all-X.Y.Z.tar.gz` previously generated with `setup.py`
 * publish
 
 
