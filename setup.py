@@ -32,7 +32,7 @@ setup(
         "audio_dataset_converter_redis>=0.0.2",
         "audio_dataset_converter_visualization>=0.0.3",
     ],
-    version="0.0.2",
+    version="0.0.3",
     author='Peter Reutemann',
     author_email='fracpete@waikato.ac.nz',
 )

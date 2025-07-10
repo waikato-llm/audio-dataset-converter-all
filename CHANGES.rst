@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.0.3 (????-??-??)
+0.0.3 (2025-07-10)
 ------------------
 
 - upgraded audio_dataset_converter to 0.0.3
