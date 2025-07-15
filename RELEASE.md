@@ -6,6 +6,7 @@ Preparation:
 * increment version in `setup.py`
 * add new changelog section in `CHANGES.rst`
 * align `DESCRIPTION.rst` with `README.md`  
+* check whether `adc-venv` lists all the modules
 * commit/push all changes
 
 Commands for releasing on pypi.org (requires twine >= 1.8.0):
