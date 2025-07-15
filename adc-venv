@@ -1,0 +1,126 @@
+#!/bin/bash
+
+# the usage of this script
+function usage()
+{
+   echo
+   echo "${0##*/} [-v <dir>] [-r] [-p <python>] [-l] [-L <dir>] [-q] [-h]"
+   echo
+   echo "Creates or updates a audio-dataset-converter virtual environment."
+   echo "Requires the 'venv' modules to be available to the Python 3 interpreter."
+   echo
+   echo " -h   this help"
+   echo " -v   <dir>"
+   echo "      the directory for the virtual environment"
+   echo "      default: $venv_dir"
+   echo " -r   remove any existing virtual environment (= force fresh install)"
+   echo " -p   <python>"
+   echo "      the Python 3 executable to use for the virtual environment"
+   echo "      default: $python3_executable"
+   echo " -l   use locally checked out git repos instead of Github ones"
+   echo " -L   <dir>"
+   echo "      the base directory with the checked out Github repositories"
+   echo "      default: $local_base_dir"
+   echo " -q   don't prompt user (= quiet mode)"
+   echo
+}
+
+# init variables
+venv_dir="./adc"
+fresh_install="no"
+python3_executable="python3"
+local_repos="no"
+local_base_dir=".."
+prompt_user="yes"
+
+# interpret parameters
+while getopts ":hlrqv:p:L:" flag
+do
+   case $flag in
+      v) venv_dir=$OPTARG
+         ;;
+      r) fresh_install="yes"
+         ;;
+      p) python3_executable=$OPTARG
+         ;;
+      l) local_repos="yes"
+         ;;
+      L) local_base_dir=$OPTARG
+         ;;
+      q) prompt_user="no"
+         ;;
+      h) usage
+         exit 0
+         ;;
+      *) usage
+         exit 1
+         ;;
+   esac
+done
+
+# output variables
+echo "Install parameters"
+echo "------------------"
+echo "Virtual env dir....: $venv_dir"
+echo "Force fresh install: $fresh_install"
+echo "Python 3 executable: $python3_executable"
+echo "Use local repos....: $local_repos"
+if [ "$local_repos" = "yes" ]
+then
+  echo "Local base dir.....: $local_base_dir"
+fi
+echo "Prompt user........: $prompt_user"
+echo
+
+# prompt user?
+if [ "$prompt_user" = "yes" ]
+then
+  read -N 1 -p "Start installation with any key, cancel with Ctrl+C..."
+  echo
+fi
+
+# remove old venv
+if [ -d "$venv_dir" ] && [ "$fresh_install" = "yes" ]
+then
+  echo
+  echo "Removing old virtual environment: $venv_dir"
+  rm -Rf "$venv_dir"
+fi
+
+# initialize venv
+if [ ! -d "$venv_dir" ]
+then
+  echo
+  echo "Creating virtual environment: $venv_dir"
+  $python3_executable -m venv $venv_dir
+  $venv_dir/bin/pip install wheel
+fi
+
+# perform install
+if [ "$local_repos" = "yes" ]
+then
+  echo
+  echo "Installing/updating from local repos..."
+  $venv_dir/bin/pip install -U \
+      $local_base_dir/audio-dataset-converter \
+      $local_base_dir/audio-dataset-converter-faster-whisper \
+      $local_base_dir/audio-dataset-converter-redis \
+      $local_base_dir/audio-dataset-converter-visualization
+else
+  echo
+  echo "Installing/updating from remote Github repos..."
+  $venv_dir/bin/pip install -U \
+      git+https://github.com/waikato-llm/audio-dataset-converter.git \
+      git+https://github.com/waikato-llm/audio-dataset-converter-faster-whisper.git \
+      git+https://github.com/waikato-llm/audio-dataset-converter-redis.git \
+      git+https://github.com/waikato-llm/audio-dataset-converter-visualization.git
+fi
+
+# output information on using venv
+echo
+echo "Activate virtual environment with:"
+echo "  . $venv_dir/bin/activate"
+echo
+echo "Deactivate the environment with:"
+echo "  deactivate"
+echo
