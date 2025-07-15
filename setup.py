@@ -27,7 +27,7 @@ setup(
     ],
     license='MIT License',
     install_requires=[
-        "audio_dataset_converter>=0.0.3",
+        "audio_dataset_converter>=0.0.4",
         "audio_dataset_converter_faster-whisper>=0.0.3",
         "audio_dataset_converter_redis>=0.0.2",
         "audio_dataset_converter_visualization>=0.0.3",

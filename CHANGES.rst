@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.0.4 (????-??-??)
+------------------
+
+- upgraded audio_dataset_converter to 0.0.4: https://github.com/waikato-llm/audio-dataset-converter/releases/tag/v0.0.4
+
+
 0.0.3 (2025-07-10)
 ------------------
 
