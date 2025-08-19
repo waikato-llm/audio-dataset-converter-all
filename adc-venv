@@ -101,6 +101,20 @@ if [ "$local_repos" = "yes" ]
 then
   echo
   echo "Installing/updating from local repos..."
+  if [ -d "$local_base_dir/seppl" ]
+  then
+    $venv_dir/bin/pip install -U $local_base_dir/seppl
+  else
+    $venv_dir/bin/pip install -U \
+        git+https://github.com/waikato-datamining/seppl.git
+  fi
+  if [ -d "$local_base_dir/kasperl" ]
+  then
+    $venv_dir/bin/pip install -U $local_base_dir/kasperl
+  else
+    $venv_dir/bin/pip install -U \
+        git+https://github.com/waikato-datamining/kasperl.git
+  fi
   $venv_dir/bin/pip install -U \
       $local_base_dir/audio-dataset-converter \
       $local_base_dir/audio-dataset-converter-faster-whisper \
@@ -110,6 +124,8 @@ else
   echo
   echo "Installing/updating from remote Github repos..."
   $venv_dir/bin/pip install -U \
+      git+https://github.com/waikato-datamining/seppl.git \
+      git+https://github.com/waikato-datamining/kasperl.git \
       git+https://github.com/waikato-llm/audio-dataset-converter.git \
       git+https://github.com/waikato-llm/audio-dataset-converter-faster-whisper.git \
       git+https://github.com/waikato-llm/audio-dataset-converter-redis.git \
