@@ -115,6 +115,13 @@ then
     $venv_dir/bin/pip install -U \
         git+https://github.com/waikato-datamining/kasperl.git
   fi
+  if [ -d "$local_base_dir/kasperl-redis" ]
+  then
+    $venv_dir/bin/pip install -U $local_base_dir/kasperl-redis
+  else
+    $venv_dir/bin/pip install -U \
+        git+https://github.com/waikato-datamining/kasperl-redis.git
+  fi
   $venv_dir/bin/pip install -U \
       $local_base_dir/audio-dataset-converter \
       $local_base_dir/audio-dataset-converter-faster-whisper \
@@ -126,6 +133,7 @@ else
   $venv_dir/bin/pip install -U \
       git+https://github.com/waikato-datamining/seppl.git \
       git+https://github.com/waikato-datamining/kasperl.git \
+      git+https://github.com/waikato-datamining/kasperl-redis.git \
       git+https://github.com/waikato-llm/audio-dataset-converter.git \
       git+https://github.com/waikato-llm/audio-dataset-converter-faster-whisper.git \
       git+https://github.com/waikato-llm/audio-dataset-converter-redis.git \
