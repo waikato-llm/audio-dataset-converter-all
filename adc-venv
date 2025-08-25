@@ -105,6 +105,7 @@ then
   then
     $venv_dir/bin/pip install -U $local_base_dir/seppl
   else
+    echo "seppl not found locally, installing from github..."
     $venv_dir/bin/pip install -U \
         git+https://github.com/waikato-datamining/seppl.git
   fi
@@ -112,6 +113,7 @@ then
   then
     $venv_dir/bin/pip install -U $local_base_dir/kasperl
   else
+    echo "kasperl not found locally, installing from github..."
     $venv_dir/bin/pip install -U \
         git+https://github.com/waikato-datamining/kasperl.git
   fi
@@ -119,6 +121,7 @@ then
   then
     $venv_dir/bin/pip install -U $local_base_dir/kasperl-redis
   else
+    echo "kasperl-redis not found locally, installing from github..."
     $venv_dir/bin/pip install -U \
         git+https://github.com/waikato-datamining/kasperl-redis.git
   fi
