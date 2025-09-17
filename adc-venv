@@ -125,7 +125,7 @@ then
     $venv_dir/bin/pip install -U \
         git+https://github.com/waikato-datamining/kasperl-redis.git
   fi
-  $venv_dir/bin/pip install -U \
+  $venv_dir/bin/pip install -U -I \
       $local_base_dir/audio-dataset-converter \
       $local_base_dir/audio-dataset-converter-faster-whisper \
       $local_base_dir/audio-dataset-converter-redis \
@@ -133,7 +133,7 @@ then
 else
   echo
   echo "Installing/updating from remote Github repos..."
-  $venv_dir/bin/pip install -U \
+  $venv_dir/bin/pip install -U -I \
       git+https://github.com/waikato-datamining/seppl.git \
       git+https://github.com/waikato-datamining/kasperl.git \
       git+https://github.com/waikato-datamining/kasperl-redis.git \
