@@ -4,7 +4,7 @@
 function usage()
 {
    echo
-   echo "${0##*/} [-v <dir>] [-r] [-p <python>] [-l] [-L <dir>] [-q] [-h]"
+   echo "${0##*/} [-v <dir>] [-r] [-p <python>] [-l] [-L <dir>] [-q] [-I] [-h]"
    echo
    echo "Creates or updates a audio-dataset-converter virtual environment."
    echo "Requires the 'venv' modules to be available to the Python 3 interpreter."
@@ -22,6 +22,7 @@ function usage()
    echo "      the base directory with the checked out Github repositories"
    echo "      default: $local_base_dir"
    echo " -q   don't prompt user (= quiet mode)"
+   echo " -I   ignored installed (pip)"
    echo
 }
 
@@ -32,9 +33,11 @@ python3_executable="python3"
 local_repos="no"
 local_base_dir=".."
 prompt_user="yes"
+ignored_installed="no"
+ignored_installed_flag=""
 
 # interpret parameters
-while getopts ":hlrqv:p:L:" flag
+while getopts ":hlrqIv:p:L:" flag
 do
    case $flag in
       v) venv_dir=$OPTARG
@@ -48,6 +51,9 @@ do
       L) local_base_dir=$OPTARG
          ;;
       q) prompt_user="no"
+         ;;
+      I) ignored_installed="yes"
+         ignored_installed_flag="-I"
          ;;
       h) usage
          exit 0
@@ -64,6 +70,7 @@ echo "------------------"
 echo "Virtual env dir....: $venv_dir"
 echo "Force fresh install: $fresh_install"
 echo "Python 3 executable: $python3_executable"
+echo "Ignore installed...: $ignored_installed"
 echo "Use local repos....: $local_repos"
 if [ "$local_repos" = "yes" ]
 then
@@ -125,7 +132,7 @@ then
     $venv_dir/bin/pip install -U \
         git+https://github.com/waikato-datamining/kasperl-redis.git
   fi
-  $venv_dir/bin/pip install -U -I \
+  $venv_dir/bin/pip install -U $ignored_installed_flag \
       $local_base_dir/audio-dataset-converter \
       $local_base_dir/audio-dataset-converter-faster-whisper \
       $local_base_dir/audio-dataset-converter-redis \
@@ -133,7 +140,7 @@ then
 else
   echo
   echo "Installing/updating from remote Github repos..."
-  $venv_dir/bin/pip install -U -I \
+  $venv_dir/bin/pip install -U $ignored_installed_flag \
       git+https://github.com/waikato-datamining/seppl.git \
       git+https://github.com/waikato-datamining/kasperl.git \
       git+https://github.com/waikato-datamining/kasperl-redis.git \
