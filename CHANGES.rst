@@ -7,6 +7,7 @@ Changelog
 - upgraded audio_dataset_converter to 0.1.0: https://github.com/waikato-llm/audio-dataset-converter/releases/tag/v0.1.0
 - upgraded audio_dataset_converter_faster_whisper to 0.1.0: https://github.com/waikato-llm/audio-dataset-converter-faster-whisper/releases/tag/v0.1.0
 - upgraded audio_dataset_converter_redis to 0.1.0: https://github.com/waikato-llm/audio-dataset-converter-redis/releases/tag/v0.1.0
+- upgraded audio_dataset_converter_visualization to 0.1.0: https://github.com/waikato-llm/audio-dataset-converter-visualization/releases/tag/v0.1.0
 
 
 0.0.3 (2025-07-10)

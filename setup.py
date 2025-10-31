@@ -30,7 +30,7 @@ setup(
         "audio_dataset_converter>=0.1.0",
         "audio_dataset_converter_faster-whisper>=0.1.0",
         "audio_dataset_converter_redis>=0.1.0",
-        "audio_dataset_converter_visualization>=0.0.3",
+        "audio_dataset_converter_visualization>=0.1.0",
     ],
     version="0.0.3",
     author='Peter Reutemann',
