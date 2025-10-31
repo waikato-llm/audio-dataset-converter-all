@@ -7,7 +7,7 @@ Meta-library that combines all [audio-dataset-converter](https://github.com/waik
 Via PyPI:
 
 ```bash
-pip install audio-dataset-converter-all
+pip install audio_dataset_converter_all
 ```
 
 The latest code straight from the repository:
