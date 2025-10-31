@@ -9,6 +9,13 @@ Preparation:
 * check whether `adc-venv` lists all the modules
 * commit/push all changes
 
+Quick test:
+
+* create virtual environment for testing: `python3 -m venv venvtest`
+* install into virtual environment: `./venvtest/bin/pip install .`
+* test with help screen of conversion tool: `./venvtest/bin/adc-convert --help`
+* remove test environment: `rm -Rf ./venvtest`
+
 Commands for releasing on pypi.org (requires twine >= 1.8.0):
 
 ```
