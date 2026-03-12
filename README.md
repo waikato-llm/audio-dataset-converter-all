@@ -28,4 +28,4 @@ Via script (using code from repos or local dirs):
 [Docker](docker) images are available from:
 
 * Docker hub: [waikatodatamining/audio-dataset-converter](https://hub.docker.com/r/waikatodatamining/audio-dataset-converter)
-* In-house registry: `public.aml-repo.cms.waikato.ac.nz:443/tools/audio-dataset-converter`
+* In-house registry: `harbor.cms.waikato.ac.nz/public/tools/audio-dataset-converter`
