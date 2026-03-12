@@ -1,5 +1,4 @@
-ARG DOCKER_REGISTRY=public.aml-repo.cms.waikato.ac.nz:443/
-FROM ${DOCKER_REGISTRY}ubuntu:24.04
+FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
