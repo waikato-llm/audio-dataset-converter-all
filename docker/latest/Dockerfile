@@ -23,7 +23,7 @@ RUN apt-get update && \
        libpq-dev && \
     rm -rf /var/lib/apt/lists/*
 
-RUN python3 -m venv /opt/audio-dataset-converter && \
+RUN python3 -m venv --system-site-packages /opt/audio-dataset-converter && \
     /opt/audio-dataset-converter/bin/pip --no-cache-dir install \
         git+https://github.com/waikato-datamining/seppl.git \
         git+https://github.com/waikato-datamining/kasperl.git \
