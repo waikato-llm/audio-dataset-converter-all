@@ -30,6 +30,8 @@ RUN python3 -m venv --system-site-packages /opt/audio-dataset-converter && \
         git+https://github.com/waikato-datamining/kasperl-redis.git \
         git+https://github.com/waikato-datamining/audio-dataset-converter.git \
         git+https://github.com/waikato-datamining/audio-dataset-converter-faster-whisper.git \
+        git+https://github.com/waikato-datamining/audio-dataset-converter-goruut.git \
+        git+https://github.com/waikato-datamining/audio-dataset-converter-phonemizer.git \
         git+https://github.com/waikato-datamining/audio-dataset-converter-redis.git \
         git+https://github.com/waikato-datamining/audio-dataset-converter-visualization.git
 
