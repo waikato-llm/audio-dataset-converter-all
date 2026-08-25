@@ -3,6 +3,7 @@ Meta-library that combines most of the [audio-dataset-converter](https://github.
 
 Omitted libraries:
 
+* [audioseal watermarking](https://github.com/waikato-llm/audio-dataset-converter-audioseal)
 * [WavMark watermarking](https://github.com/waikato-llm/audio-dataset-converter-wavmark)
 
 
