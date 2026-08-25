@@ -1,5 +1,9 @@
 # audio-dataset-converter-all
-Meta-library that combines all [audio-dataset-converter](https://github.com/waikato-llm/audio-dataset-converter) libraries.
+Meta-library that combines most of the [audio-dataset-converter](https://github.com/waikato-llm/audio-dataset-converter) libraries.
+
+Omitted libraries:
+
+* [WavMark watermarking](https://github.com/waikato-llm/audio-dataset-converter-wavmark)
 
 
 ## Installation
