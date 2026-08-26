@@ -28,12 +28,12 @@ RUN python3 -m venv --system-site-packages /opt/audio-dataset-converter && \
         git+https://github.com/waikato-datamining/seppl.git \
         git+https://github.com/waikato-datamining/kasperl.git \
         git+https://github.com/waikato-datamining/kasperl-redis.git \
-        git+https://github.com/waikato-datamining/audio-dataset-converter.git \
-        git+https://github.com/waikato-datamining/audio-dataset-converter-faster-whisper.git \
-        git+https://github.com/waikato-datamining/audio-dataset-converter-goruut.git \
-        git+https://github.com/waikato-datamining/audio-dataset-converter-phonemizer.git \
-        git+https://github.com/waikato-datamining/audio-dataset-converter-redis.git \
-        git+https://github.com/waikato-datamining/audio-dataset-converter-visualization.git
+        git+https://github.com/waikato-llm/audio-dataset-converter.git \
+        git+https://github.com/waikato-llm/audio-dataset-converter-faster-whisper.git \
+        git+https://github.com/waikato-llm/audio-dataset-converter-goruut.git \
+        git+https://github.com/waikato-llm/audio-dataset-converter-phonemizer.git \
+        git+https://github.com/waikato-llm/audio-dataset-converter-redis.git \
+        git+https://github.com/waikato-llm/audio-dataset-converter-visualization.git
 
 ENV PATH=/opt/audio-dataset-converter/bin:$PATH
 COPY bash.bashrc /etc/bash.bashrc
