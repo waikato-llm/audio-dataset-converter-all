@@ -135,6 +135,8 @@ then
   $venv_dir/bin/pip install -U $ignored_installed_flag \
       $local_base_dir/audio-dataset-converter \
       $local_base_dir/audio-dataset-converter-faster-whisper \
+      $local_base_dir/audio-dataset-converter-goruut \
+      $local_base_dir/audio-dataset-converter-phonemizer \
       $local_base_dir/audio-dataset-converter-redis \
       $local_base_dir/audio-dataset-converter-visualization
 else
@@ -146,6 +148,8 @@ else
       git+https://github.com/waikato-datamining/kasperl-redis.git \
       git+https://github.com/waikato-llm/audio-dataset-converter.git \
       git+https://github.com/waikato-llm/audio-dataset-converter-faster-whisper.git \
+      git+https://github.com/waikato-llm/audio-dataset-converter-goruut.git \
+      git+https://github.com/waikato-llm/audio-dataset-converter-phonemizer.git \
       git+https://github.com/waikato-llm/audio-dataset-converter-redis.git \
       git+https://github.com/waikato-llm/audio-dataset-converter-visualization.git
 fi
